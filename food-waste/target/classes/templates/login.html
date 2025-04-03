@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Food Waste Reduction</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="icon" href="/images/logo.png" type="image/x-icon">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+                <img th:src="@{/images/FOME.png}" alt="Logo" class="logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link mx-2" href="/">Home</a>
+                    </li>
+                    <li class="nav-item" th:if="${#authorization.expression('!isAuthenticated()')}">
+                        <a class="nav-link mx-2 index" href="/login">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mx-2" href="/volunteer">Voluntário</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mx-2" href="/registerRestaurant">Estabelecimentos</a>
+                    </li>
+                    <!-- Botão de Logout visível apenas para usuários autenticados -->
+                    <li class="nav-item" th:if="${#authorization.expression('isAuthenticated()')}">
+                        <form class="mx-2" action="/logout" method="post">
+                            <button type="submit" class="btn btn-light logout">Logout</button>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container d-flex justify-content-center align-items-center" style="height: 80vh;">
+        <div class="card p-4" style="width: 350px;">
+            <h2 class="text-center">Login</h2>
+            <form action="/login" method="post">
+                <div class="mb-3">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" class="form-control" id="username" name="username" required>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" name="password" required>
+                </div>
+                <button type="submit" class="btn btn-form w-100">Login</button>
+            </form>
+
+
+            <!-- Exibir erro se o parâmetro 'error' estiver presente na URL -->
+            <div th:if="${param.error}" class="text-danger text-center">
+                <p>Nome de usuário ou senha inválidos. Tente novamente.</p>
+            </div>
+
+            <p class="mt-3 text-center">
+                <a class="register-link" href="/registerRestaurant">Registre-se</a>, caso não tenha uma conta.
+            </p>
+
+        </div>
+    </div>
+</body>
+
+</html>

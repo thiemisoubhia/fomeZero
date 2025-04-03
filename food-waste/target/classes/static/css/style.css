@@ -1,0 +1,92 @@
+/* Remove a cor azul quando clicado */
+.nav-link:focus, 
+.nav-link:active, 
+.dropdown-item:focus, 
+.dropdown-item:active {
+    color: inherit !important; /* Mantém a cor original */
+    background-color: transparent !important; /* Remove fundo azul */
+    outline: none !important; /* Remove contorno */
+}
+
+
+.reserved {
+    background-color: #c8e6c9;
+}
+
+table th,
+table td {
+    text-align: center;
+}
+
+nav{
+    background-color: #7ED956;
+}
+
+.nav-link{
+    color: white;
+    font-size: 1.1rem;
+}
+
+.nav-link:hover{
+    text-decoration: underline;
+    color: white;
+
+}
+
+.index{
+    font-weight: 700;
+}
+
+.logo{
+    height: 5rem;
+    width: auto;
+}
+
+.navbar-brand{
+    padding: 0rem;
+}
+
+
+.logout{
+    color: #727272;
+    background-color: #fff;
+}
+
+.logout:hover{
+    color: #7ED956;
+    background-color: #fff;
+}
+
+.cadastro-food{
+    height: 80vh;
+}
+
+.btn-form{
+    color: #fff;
+    background-color: #7ED956;
+}
+
+.btn-form:hover{
+    color: #fff;
+    background-color: #398119;
+}
+
+.form-check-input:checked{
+    background-color: #7ED956;
+    border: none;
+}
+
+.register-link{
+    color: #7ED956;
+}
+
+
+.btn-link{
+    color: #7ED956;
+}
+
+
+.btn-link:hover{
+    color: #7ED956;
+    text-decoration: none;
+}
