@@ -29,6 +29,10 @@ The project follows the principles of the **Good Samaritan Law (Law 14.016/2020)
 - **Back-end:** Spring Boot, Thymeleaf
 - **Database:** MySQL
 - **Version Control:** Git/GitHub
+- **Prototype:** Figma
+
+## Figma Link
+https://www.figma.com/design/VFuMueLoxTN8cO5hniaQBK/Untitled?node-id=1-2&t=sCqUakHa5ceNSo2T-1
 
 ## How to Run the Project
 1. Clone the repository:
