@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+* {
+    font-family: "Rubik", sans-serif;
+}
+
+html {
+    scroll-padding-top: 70px;
+  }
+  
+
+/* tabelas e form itens */
+table th,
+table td {
+    text-align: center;
+}
+
+th{
+    background-color: #7ED956 !important;
+    color: #fff !important;
+}
+
+.reserved {
+    background-color: #c8e6c9;
+}
+
+.btn-form {
+    color: #fff;
+    background-color: #7ED956;
+}
+
+.btn-form:hover {
+    color: #fff;
+    background-color: #438f22;
+}
+
+.form-check-input:checked {
+    background-color: #7ED956;
+    border: none;
+}
+
+
+.btn-link {
+    color: #7ED956;
+}
+
+
+.btn-link:hover {
+    color: #7ED956;
+    text-decoration: none;
+}
+
+
+
+/* menu */
+.nav-link:focus,
+.nav-link:active,
+.dropdown-item:focus,
+.dropdown-item:active {
+    color: inherit !important;
+    /* Mantém a cor original */
+    background-color: transparent !important;
+    /* Remove fundo azul */
+    outline: none !important;
+    /* Remove contorno */
+}
+
+nav {
+    background-color: #7ED956;
+}
+
+.nav-link {
+    color: white;
+    font-size: 1.1rem;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+    color: white;
+
+}
+
+.index {
+    font-weight: 700;
+}
+
+.logo {
+    height: 5rem;
+    width: auto;
+}
+
+.navbar-brand {
+    padding: 0rem;
+}
+
+
+.logout {
+    color: #727272;
+    background-color: #fff;
+}
+
+.logout:hover {
+    color: #7ED956;
+    background-color: #fff;
+}
+
+/* restaurantArea */
+.cadastro-food {
+    height: 80vh;
+}
+
+.register-link {
+    color: #7ED956;
+}
+
+
+/* sucessPage */
+.logoSucess {
+    width: 20rem;
+}
+
+
+/* index */
+/* accordion */
+.accordion-button:not(.collapsed) {
+    background-color: #7ED956 !important;
+    color: white !important;
+    box-shadow: none !important;
+}
+
+.accordion-button {
+    color: black;
+}
+
+.accordion-button:not(.collapsed)::after {
+    filter: invert(1);
+}
+
+.fomeZero {
+    width: 6rem;
+    height: auto;
+}
+
+.txtReserva{
+    color: #7ED956;
+}
+
+.greenArea{
+    background-color: #7ED956;
+    color: #fff;
+    margin-bottom: 0;
+}
+
+.user img{
+    width: 8rem;
+    height: auto;
+}
+
+
+/* reservaSucess */
+.sucessReserve {
+    background-color: #7ED956;
+}
+
+/* rodape */
+
+footer{
+    background-color: #2D312B;
+    color: #fff;
+    margin-top: -15px;
+    position: relative;
+    z-index: 1;
+    border-top-right-radius: 1.1rem;
+    border-top-left-radius: 1.1rem;
+}
+
+.url{
+    color: #7ED956;
+}
+
+.ico-footer{
+    width: 3rem;
+    height: auto;
+}
