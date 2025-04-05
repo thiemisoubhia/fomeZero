@@ -69,6 +69,10 @@ nav {
     background-color: #7ED956;
 }
 
+.navbar{
+    z-index: 1000;
+}
+
 .nav-link {
     color: white;
     font-size: 1.1rem;
@@ -181,4 +185,20 @@ footer{
 .ico-footer{
     width: 3rem;
     height: auto;
+}
+
+
+/* chatbot */
+
+df-messenger {
+    --df-messenger-bot-message: #e6f3ec;
+    --df-messenger-button-titlebar-color: #28a745;
+    --df-messenger-chat-background-color: #fff;
+    --df-messenger-font-color: #000;
+    --df-messenger-send-icon: #28a745;
+    --df-messenger-user-message: #dcf8c6;
+    z-index: 9999 !important;
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
 }
