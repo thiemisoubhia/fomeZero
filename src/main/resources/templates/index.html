@@ -61,7 +61,7 @@
     <div class="container mt-5 mb-5 pt-5">
         <div class="row pt-5">
             <div class="col-lg-6 col-12 px-5">
-                <h1 >Bem-vindo ao <img src="images/logo.png" class="fomeZero"></h1>
+                <h1 >Bem-vindo ao <img src="images/logo.png" class="fomeZero img-fluid"></h1>
                 <h4 class="mb-4">Onde cada alimento encontra um destino melhor!</h4>
                 <p>Sabia que um terço de toda a comida produzida no mundo vai parar no lixo? <br>
                     Enquanto isso, milhões de pessoas enfrentam a fome todos os dias... Só no Brasil, mais de 33 milhões vivem sem ter o que comer.<br>
@@ -134,42 +134,44 @@
         <p class="pb-3">É simples! Aqui você pode visualizar os alimentos disponíveis para doação. Caso encontre algo de interesse, basta marcar a opção "Reservado" para garantir o item. Depois, é só comparecer ao endereço indicado para a retirada.
             <br>Se mudar de ideia, contate o chatbot para que outra pessoa tenha a chance de aproveitar.</p>
 
-        <table class="table table-striped table-bordered">
-            <thead>
-                <tr>
-                    <th>Nome</th>
-                    <th>Descrição</th>
-                    <th>Endereço</th>
-                    <th>Reservado</th>
-                    <th th:if="${#authorization.expression('isAuthenticated()')}">Ações</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr th:each="foodItem : ${foodItems}" 
-                    th:if="${!foodItem.reserved or #authorization.expression('isAuthenticated()')}">
-                    <td th:text="${foodItem.name}">Alimento</td>
-                    <td th:text="${foodItem.description}">Descrição</td>
-                    <td th:text="${foodItem.restaurant.address}">Endereço</td>
-                    <td>
-                        <form th:action="@{/restaurantArea/reserve/{id}(id=${foodItem.id})}" method="post"
-                            class="reserve-form">
-                            <div class="form-check">
-                                <input type="checkbox" class="form-check-input" th:name="reserved"
-                                    th:checked="${foodItem.reserved}" onchange="this.form.submit();" />
-                                <label class="form-check-label">Reservado</label>
-                            </div>
-                        </form>
-                    </td>
-                    <td th:if="${#authorization.expression('isAuthenticated()')}">
-                        <form th:action="@{restaurantArea/excluir/{id}(id=${foodItem.id})}" method="post"
-                              onsubmit="return confirmDelete(event)">
-                            <input type="hidden" name="_method" value="delete">
-                            <button class="btn btn-danger" type="submit">Excluir</button>
-                        </form>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Descrição</th>
+                            <th>Endereço</th>
+                            <th>Reservado</th>
+                            <th th:if="${#authorization.expression('isAuthenticated()')}">Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="foodItem : ${foodItems}" 
+                            th:if="${!foodItem.reserved or #authorization.expression('isAuthenticated()')}">
+                            <td th:text="${foodItem.name}">Alimento</td>
+                            <td th:text="${foodItem.description}">Descrição</td>
+                            <td th:text="${foodItem.restaurant.address}">Endereço</td>
+                            <td>
+                                <form th:action="@{/restaurantArea/reserve/{id}(id=${foodItem.id})}" method="post"
+                                    class="reserve-form">
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" th:name="reserved"
+                                            th:checked="${foodItem.reserved}" onchange="this.form.submit();" />
+                                        <label class="form-check-label">Reservado</label>
+                                    </div>
+                                </form>
+                            </td>
+                            <td th:if="${#authorization.expression('isAuthenticated()')}">
+                                <form th:action="@{restaurantArea/excluir/{id}(id=${foodItem.id})}" method="post"
+                                      onsubmit="return confirmDelete(event)">
+                                    <input type="hidden" name="_method" value="delete">
+                                    <button class="btn btn-danger" type="submit">Excluir</button>
+                                </form>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
     </div>
 
     <div class="greenArea container-fluid mt-5">
@@ -181,7 +183,7 @@
                             <img src="images/user.png" alt="">
                             <h4 class="pt-1">Juan Brenzzo Conceição Barreto dos Santos</h4>
                         </div>
-                        <div class="col-lg-3 col-lg-3 col-6 p-2">
+                        <div class="col-lg-3 col-md-3 col-6 p-2">
                             <img src="images/user.png" alt="">
                             <h4 class="pt-1">Mateo Loranzo Gaboardi Pas</h4>
                         </div>
@@ -201,7 +203,7 @@
         <h1 class="text-center pt-5 pb-2">Onde tudo acontece</h1>
         <div class="row">
             <div class="col-12 col-lg-6 text-end">
-                <iframe class="mb-5 rounded" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d56876.304882065066!2d-48.616983850000004!3d-27.005854399999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94d8b65cc2e52aad%3A0x2dc004f5e6adebc4!2zQmFsbmXDoXJpbyBDYW1ib3Jpw7osIFND!5e0!3m2!1spt-BR!2sbr!4v1743802123199!5m2!1spt-BR!2sbr" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe class="mb-5 rounded w-100" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d56876.304882065066!2d-48.616983850000004!3d-27.005854399999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94d8b65cc2e52aad%3A0x2dc004f5e6adebc4!2zQmFsbmXDoXJpbyBDYW1ib3Jpw7osIFND!5e0!3m2!1spt-BR!2sbr!4v1743802123199!5m2!1spt-BR!2sbr" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
             <div class="col-12 col-lg-5 pt-5">
                 <p class="pe-5 p-2">Nosso projeto nasceu com o desejo de fazer a diferença na vida de quem mais precisa — e começamos pelas comunidades que conhecemos e amamos. Atuaremos em Balneário Camboriú, Itajaí, Camboriú, Blumenau e regiões próximas, conectando alimentos que seriam desperdiçados a pessoas que precisam de uma refeição cheia de carinho. Juntos, queremos espalhar solidariedade por toda Santa Catarina, um prato cheio por vez!</p>
