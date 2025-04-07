@@ -202,3 +202,10 @@ df-messenger {
     bottom: 16px;
     right: 16px;
 }
+
+
+@media (min-width: 1024px) {
+    .maps {
+      padding-left: 4rem;
+    }
+}
