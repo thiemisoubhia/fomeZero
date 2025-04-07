@@ -32,7 +32,7 @@ The project follows the principles of the **Good Samaritan Law (Law 14.016/2020)
 ##  Technologies Used
 - **Front-end:** HTML, CSS, Bootstrap
 - **Back-end:** Spring Boot, Thymeleaf
-- **Database:** MySQL
+- **Database:** PostgreSQL
 - **Version Control:** Git/GitHub
 - **Prototype:** Figma
 
